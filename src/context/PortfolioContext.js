@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import api from '../services/api';
 
 const PortfolioContext = createContext();
@@ -33,7 +33,7 @@ export const PortfolioProvider = ({ children }) => {
     return [...items].sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
   };
 
-  const fetchAllData = async () => {
+  const fetchAllData= useCallback(async () => {
     setLoading(true);
     try {
       const [
@@ -76,11 +76,11 @@ export const PortfolioProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchAllData();
-  }, []);
+  }, [fetchAllData]);
 
   const value = {
     ...data,
