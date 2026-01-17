@@ -25,11 +25,11 @@ const ProjectDetailModal = ({ project, onClose }) => {
     ? project.technologies 
     : project.technologies?.split(',').map(t => t.trim()) || [];
 
-  // Get all images - prefer images array, fallback to single image_url
+  // Get all images - prefer images array, fallback to single 
   const allImages = project.images && project.images.length > 0 
     ? project.images 
-    : project.image_url 
-      ? [project.image_url] 
+    : project.image 
+      ? [project.image] 
       : [];
 
   const hasMultipleImages = allImages.length > 1;

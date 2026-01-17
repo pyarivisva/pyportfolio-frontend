@@ -86,13 +86,13 @@ const Projects = () => {
                   onClick={() => setSelectedProject(project)}
                 >
                   {/* Banner Image */}
-                  {project.image_url && (
+                  {project.image && (
                     <div
                       className="relative w-full overflow-hidden bg-gray-100/70 dark:bg-gray-800/50"
                       style={{ aspectRatio: '16 / 9' }}
                     >
                       <SmartImage
-                        src={resolveMediaUrl(project.image_url)}
+                        src={resolveMediaUrl(project.image)}
                         alt={project.title}
                         className="w-full h-full"
                       />

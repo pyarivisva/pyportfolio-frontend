@@ -4,7 +4,8 @@ import {
   FaGithub, 
   FaLinkedin, 
   FaInstagram, 
-  FaEnvelope 
+  FaEnvelope,
+  FaBehance, 
 } from 'react-icons/fa';
 
 const getIcon = (iconName) => {
@@ -13,6 +14,7 @@ const getIcon = (iconName) => {
     case 'linkedin': return <FaLinkedin className="w-6 h-6" />;
     case 'instagram': return <FaInstagram className="w-6 h-6" />;
     case 'email': return <FaEnvelope className="w-6 h-6" />;
+    case 'behance': return <FaBehance className="w-6 h-6" />;
     default: return <FaEnvelope className="w-6 h-6" />;
   }
 };

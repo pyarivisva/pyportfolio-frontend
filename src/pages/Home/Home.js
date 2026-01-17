@@ -16,8 +16,8 @@ const Home = () => {
     setIsVisible(true);
     fetchServices();
     // Debug: Check if profile has cv_file
-    console.log('Profile data:', profile);
-    console.log('CV File:', profile?.cv_file);
+    // console.log('Profile data:', profile);
+    // console.log('CV File:', profile?.cv_file);
   }, [profile]);
 
   const fetchServices = async () => {
@@ -54,16 +54,16 @@ const Home = () => {
 
         <div className="relative max-w-7xl mx-auto w-full">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Profile Image Card - Mobile First (Above Text) */}
+            {/* Profile Image Card */}
             <div className={`relative order-1 lg:order-2 ${isVisible ? 'animate-fade-in animation-delay-400' : 'opacity-0'}`}>
               <div className="relative group flex items-center justify-center">
                 {/* Main Profile Container */}
                 <div className="relative">
-                  {/* Profile Image with Glassmorphism Border */}
+                  {/* Profile Image */}
                   <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full p-1.5 backdrop-blur-2xl bg-gradient-to-br from-white/60 via-white/40 to-white/30 dark:from-gray-900/80 dark:via-gray-800/70 dark:to-gray-900/80 border border-white/30 dark:border-purple-500/20 shadow-2xl group-hover:scale-105 transition-all duration-500">
                     <div className="w-full h-full rounded-full overflow-hidden border-2 border-white/50 dark:border-gray-700/50 shadow-xl">
                       <img
-                        src={resolveMediaUrl(profile?.profile_image) || "/assets/images/profile-pic.png"}
+                        src={resolveMediaUrl(profile?.profile) || "/assets/profile-pic.png"}
                         alt={profile?.name || "Profile"}
                         className="w-full h-full object-cover"
                       />
@@ -128,8 +128,8 @@ const Home = () => {
                 </Link>
                 <button
                   onClick={() => {
-                    if (profile?.cv_file) {
-                      window.open(`http://localhost:5000${profile.cv_file}`, '_blank');
+                    if (profile?.resume_url) {
+                      window.open(resolveMediaUrl(profile.resume_url), '_blank');
                     } else {
                       setShowCvModal(true);
                     }
@@ -146,7 +146,9 @@ const Home = () => {
               {/* Social Links */}
               {socialLinks && socialLinks.length > 0 && (
                 <div className="flex flex-wrap gap-2 lg:gap-3 animate-slide-up animation-delay-1000 justify-center lg:justify-start">
-                  {socialLinks.map((link) => {
+                  {socialLinks
+                  .filter((link) => link.platform !== 'Instagram' && link.platform !== 'Email')
+                  .map((link) => {
                     const SocialIcon = getSkillIcon(link.icon || link.platform, 'tools');
                     return (
                       <a

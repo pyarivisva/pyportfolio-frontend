@@ -276,13 +276,13 @@ const About = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                       {/* Image */}
-                      {exp.image_url && (
+                      {exp.image && (
                         <div
                           className="relative w-full overflow-hidden bg-gray-100/70 dark:bg-gray-800/50"
                           style={{ aspectRatio: '16 / 9' }}
                         >
                           <SmartImage
-                            src={resolveMediaUrl(exp.image_url)}
+                            src={resolveMediaUrl(exp.image)}
                             alt={exp.position}
                             className="w-full h-full"
                           />
@@ -741,8 +741,8 @@ const About = () => {
       {selectedExperience && (() => {
         const expImages = selectedExperience.images && selectedExperience.images.length > 0 
           ? selectedExperience.images 
-          : selectedExperience.image_url 
-            ? [selectedExperience.image_url] 
+          : selectedExperience.images 
+            ? [selectedExperience.image] 
             : [];
         const hasMultipleImages = expImages.length > 1;
 

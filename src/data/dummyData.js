@@ -7,7 +7,7 @@ export const dummyData = {
     email: 'pyarivisva@gmail.com',
     phone: '+62 821 4402 4362',
     location: 'Indonesia',
-    avatar: '/profile-photo.png', 
+    profile: '/profile-pic.png', 
     resume_url: '/uploads/1768198588431-6clo8pcn7ae.pdf'
   },
   socialLinks: [
@@ -38,6 +38,13 @@ export const dummyData = {
       url: 'https://www.instagram.com/pyaripujita/', 
       icon: 'instagram', 
       display_order: 3 
+    },
+    { 
+      id: 5, 
+      platform: 'Behance', 
+      url: 'https://www.behance.net/pyarivisva',
+      icon: 'behance',
+      display_order: 4 
     }
   ],
   skills: [

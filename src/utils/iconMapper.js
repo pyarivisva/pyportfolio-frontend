@@ -32,6 +32,7 @@ import {
   SiFlutter,
   SiPostman,
   SiLaravel,
+  SiBehance,
 } from 'react-icons/si';
 
 import { VscVscode } from 'react-icons/vsc';
@@ -122,6 +123,7 @@ export const iconMap = {
   'instagram': SiInstagram,
   'email': FaEnvelope,
   'postman': SiPostman,
+  'behance': SiBehance,
   
   // API/GraphQL
   'graphql': SiGraphql,
