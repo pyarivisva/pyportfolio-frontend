@@ -602,7 +602,7 @@ export const dummyData = {
       subtitle: 'Modern Frontend & Backend',
       description: 'Build fast, secure, and scalable websites and APIs using modern stacks.',
       icon: 'code',
-      bullets: ['Front-End', 'Back-End', 'Performance & Best Practices', 'Deploy & CI/CD'],
+      bullets: ['Front-End', 'Back-End', 'Responsive'],
       display_order: 1
     },
     {
@@ -611,7 +611,7 @@ export const dummyData = {
       subtitle: 'Web & Mobile',
       description: 'Design clean, accessible interfaces and intuitive user flows for websites and mobile apps.',
       icon: 'palette',
-      bullets: ['Wireframes', 'Design Systems', 'Responsive', 'Prototyping'],
+      bullets: ['Wireframes', 'Design System', 'Prototyping'],
       display_order: 2
     },
     {

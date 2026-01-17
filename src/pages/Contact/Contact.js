@@ -30,8 +30,7 @@ const Contact = () => {
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In <span className="bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            I'm currently open for internship or freelance opportunities. 
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"> 
             Feel free to reach out via email or social media!
           </p>
         </div>
@@ -40,21 +39,40 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-slide-up" style={{ animationDelay: '100ms' }}>
           
           {/* Email */}
-          <div className="col-span-1 md:col-span-2 backdrop-blur-xl bg-white/40 dark:bg-gray-900/60 border border-white/20 dark:border-purple-500/10 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-6">
-              <FaEnvelope className="w-8 h-8" />
+          {/* Email Card - Compact Premium Horizontal */}
+          <div className="relative group col-span-1 md:col-span-2 overflow-hidden backdrop-blur-2xl bg-white/50 dark:bg-gray-900/60 border border-white/40 dark:border-purple-500/20 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-purple-500/10 transition-all duration-500">
+            
+            {/* Subtle Background Decor */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-500/5 via-transparent to-purple-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute -right-10 -top-10 w-40 h-40 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/20 transition-all duration-500"></div>
+            <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500"></div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+              
+              {/* Icon - Compact Side */}
+              <div className="flex-shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-purple-600 text-white shadow-lg shadow-primary-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                <FaEnvelope className="w-7 h-7" />
+              </div>
+              
+              {/* Content - Efficient Use of Space */}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  Let's Collaborate
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+                  Open for internships, freelance projects, or just a tech discussions.
+                </p>
+              </div>
+              
+              {/* Action Button - Right Aligned */}
+              <a 
+                href={`mailto:${profile.email}`}
+                className="flex-shrink-0 relative inline-flex items-center gap-2 px-6 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-bold text-sm hover:scale-105 hover:shadow-lg transition-all duration-300 group/btn whitespace-nowrap"
+              >
+                <FaEnvelope className="text-lg group-hover/btn:animate-bounce" />
+                <span>Email Me</span>
+              </a>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Email Me</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              For project inquiries or just to say hi.
-            </p>
-            <a 
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-xl font-semibold hover:scale-105 transition-transform duration-300"
-            >
-              <FaEnvelope />
-              {profile.email}
-            </a>
           </div>
 
           {/* Social media links */}
